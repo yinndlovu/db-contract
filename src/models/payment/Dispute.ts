@@ -12,7 +12,6 @@ Dispute.init(
     },
     escrowId: {
       type: DataTypes.UUID,
-      primaryKey: true,
       allowNull: false,
     },
     initiatedBy: {

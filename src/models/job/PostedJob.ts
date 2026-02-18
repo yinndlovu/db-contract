@@ -42,9 +42,13 @@ PostedJob.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     aboutRole: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
     },
     responsibilities: {
       type: DataTypes.TEXT,

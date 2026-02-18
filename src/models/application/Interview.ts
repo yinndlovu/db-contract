@@ -18,6 +18,10 @@ Interview.init(
       type: DataTypes.UUID,
       allowNull: false,
     },
+    companyId: {
+      type: DataTypes.UUID,
+      allowNull: false,
+    },
     status: {
       type: DataTypes.ENUM("Scheduled", "Completed", "Cancelled"),
       defaultValue: "Scheduled",
@@ -30,6 +34,9 @@ Interview.init(
     },
     feedback: {
       type: DataTypes.TEXT,
+    },
+    isApproved: {
+      type: DataTypes.BOOLEAN,
     },
   },
   { sequelize, modelName: "Interview", timestamps: true },

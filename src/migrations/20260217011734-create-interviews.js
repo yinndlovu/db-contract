@@ -30,6 +30,16 @@ module.exports = {
         onDelete: "RESTRICT",
         onUpdate: "CASCADE",
       },
+      companyId: {
+        type: Sequelize.UUID,
+        allowNull: false,
+        references: {
+          model: "Companies",
+          key: "id",
+        },
+        onDelete: "RESTRICT",
+        onUpdate: "CASCADE",
+      },
       status: {
         type: Sequelize.ENUM("Scheduled", "Completed", "Cancelled"),
         allowNull: false,
@@ -43,6 +53,10 @@ module.exports = {
       },
       feedback: {
         type: Sequelize.TEXT,
+      },
+      isApproved: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       createdAt: {
         type: Sequelize.DATE,

@@ -58,7 +58,7 @@ JobSeeker.init(
       defaultValue: false,
     },
     referredBy: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
     },
     resumeTemplate: {
       type: DataTypes.ENUM("Minimal", "Professional", "Corporate"),

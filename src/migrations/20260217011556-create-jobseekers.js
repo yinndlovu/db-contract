@@ -63,7 +63,8 @@ module.exports = {
         defaultValue: false,
       },
       referredBy: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
+        allowNull: true,
       },
       resumeTemplate: {
         type: Sequelize.ENUM("Minimal", "Professional", "Corporate"),

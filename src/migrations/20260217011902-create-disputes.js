@@ -21,16 +21,34 @@ module.exports = {
         onUpdate: "CASCADE",
       },
       initiatedBy: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
+        references: {
+          model: "JobSeekers",
+          key: "userId",
+        },
+        onDelete: "RESTRICT",
+        onUpdate: "CASCADE",
       },
       posterId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
+        references: {
+          model: "JobSeekers",
+          key: "userId",
+        },
+        onDelete: "RESTRICT",
+        onUpdate: "CASCADE",
       },
       applicantId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         allowNull: false,
+        references: {
+          model: "JobSeekers",
+          key: "userId",
+        },
+        onDelete: "RESTRICT",
+        onUpdate: "CASCADE",
       },
       reason: {
         type: Sequelize.STRING,

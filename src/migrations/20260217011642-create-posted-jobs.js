@@ -58,9 +58,13 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
+      role: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       aboutRole: {
         type: Sequelize.TEXT,
-        allowNull: false,
+        allowNull: true,
       },
       responsibilities: {
         type: Sequelize.TEXT,

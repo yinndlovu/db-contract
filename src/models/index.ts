@@ -71,6 +71,9 @@ Recruiter.belongsTo(Company, { foreignKey: "companyId" });
 Company.hasMany(PostedJob, { foreignKey: "companyId" });
 PostedJob.belongsTo(Company, { foreignKey: "companyId" });
 
+Company.hasMany(Interview, { foreignKey: "companyId" });
+Interview.belongsTo(Company, { foreignKey: "companyId" });
+
 //Application relationships
 Application.hasMany(Interview, { foreignKey: "applicationId" });
 Interview.belongsTo(Application, { foreignKey: "applicationId" });
@@ -115,6 +118,11 @@ Dispute.belongsTo(Escrow, { foreignKey: "escrowId" });
 
 Escrow.belongsTo(JobSeeker, { as: "poster", foreignKey: "posterId" });
 Escrow.belongsTo(JobSeeker, { as: "applicant", foreignKey: "applicantId" });
+
+//Dispute relationships
+Dispute.belongsTo(User, { as: "initiator", foreignKey: "initiatedBy" });
+Dispute.belongsTo(User, { as: "poster", foreignKey: "posterId" });
+Dispute.belongsTo(User, { as: "applicant", foreignKey: "applicantId" });
 
 export {
   User,
