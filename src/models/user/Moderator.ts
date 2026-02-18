@@ -1,7 +1,7 @@
-const { DataTypes, Model } = require("sequelize");
-const sequelize = require("../../sequelize");
+import { DataTypes, Model } from "sequelize";
+import sequelize from "../../sequelize";
 
-class Moderator extends Model {}
+export class Moderator extends Model {}
 
 Moderator.init(
   {
@@ -17,5 +17,3 @@ Moderator.init(
   },
   { sequelize, modelName: "Moderator", timestamps: true },
 );
-
-module.exports = Moderator;

@@ -1,7 +1,5 @@
 "use strict";
 
-const { tableName } = require("../models/user/Rating");
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {

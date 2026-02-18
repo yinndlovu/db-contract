@@ -1,9 +1,9 @@
-const { DataTypes, Model } = require("sequelize");
-const sequelize = require("../../sequelize");
+import { DataTypes, Model } from "sequelize";
+import sequelize from "../../sequelize";
 
-class Scrapped extends Model {}
+export class ScrappedJob extends Model {}
 
-Scrapped.init(
+ScrappedJob.init(
   {
     jobId: {
       type: DataTypes.UUID,
@@ -21,5 +21,3 @@ Scrapped.init(
   },
   { sequelize, modelName: "Scrapped", timestamps: true },
 );
-
-module.exports = Scrapped;

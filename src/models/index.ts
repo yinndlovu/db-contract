@@ -1,24 +1,24 @@
-const User = require("./user/User");
-const Role = require("./user/Role");
-const UserRole = require("./user/UserRole");
-const Otp = require("./user/Otp");
-const JobSeeker = require("./user/JobSeeker");
-const Recruiter = require("./user/Recruiter");
-const Moderator = require("./user/Moderator");
-const Rating = require("./user/Rating");
-const Interview = require("./application/Interview");
-const WhatsappSession = require("./user/WhatsappSession");
-const Company = require("./company/Company");
-const Job = require("./job/Job");
-const PostedJob = require("./job/PostedJob");
-const ScrappedJob = require("./job/ScrappedJob");
-const SideGig = require("./job/SideGig");
-const Application = require("./application/Application");
-const Payment = require("./payment/Payment");
-const ITN = require("./payment/ITN");
-const SideGigPayment = require("./payment/SideGigPayment");
-const Escrow = require("./payment/Escrow");
-const Dispute = require("./payment/Dispute");
+import { User } from "./user/User";
+import { Role } from "./user/Role";
+import { UserRole } from "./user/UserRole";
+import { Otp } from "./user/Otp";
+import { JobSeeker } from "./user/JobSeeker";
+import { Recruiter } from "./user/Recruiter";
+import { Moderator } from "./user/Moderator";
+import { Rating } from "./user/Rating";
+import { Interview } from "./application/Interview";
+import { WhatsappSession } from "./user/WhatsappSession";
+import { Company } from "./company/Company";
+import { Job } from "./job/Job";
+import { PostedJob } from "./job/PostedJob";
+import { ScrappedJob } from "./job/ScrappedJob";
+import { SideGig } from "./job/SideGig";
+import { Application } from "./application/Application";
+import { Payment } from "./payment/Payment";
+import { ITN } from "./payment/ITN";
+import { SideGigPayment } from "./payment/SideGigPayment";
+import { Escrow } from "./payment/Escrow";
+import { Dispute } from "./payment/Dispute";
 
 //User relationships
 User.belongsToMany(Role, {
@@ -116,7 +116,7 @@ Dispute.belongsTo(Escrow, { foreignKey: "escrowId" });
 Escrow.belongsTo(JobSeeker, { as: "poster", foreignKey: "posterId" });
 Escrow.belongsTo(JobSeeker, { as: "applicant", foreignKey: "applicantId" });
 
-module.exports = {
+export {
   User,
   Role,
   UserRole,

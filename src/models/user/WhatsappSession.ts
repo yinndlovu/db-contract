@@ -1,7 +1,7 @@
-const { DataTypes, Model } = require("sequelize");
-const sequelize = require("../../sequelize");
+import { DataTypes, Model } from "sequelize";
+import sequelize from "../../sequelize";
 
-class WhatsappSession extends Model {}
+export class WhatsappSession extends Model {}
 
 WhatsappSession.init(
   {
@@ -40,5 +40,3 @@ WhatsappSession.init(
   },
   { sequelize, modelName: "WhatsappSession", timestamps: true },
 );
-
-module.exports = WhatsappSession;

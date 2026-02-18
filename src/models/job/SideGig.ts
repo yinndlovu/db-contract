@@ -1,7 +1,7 @@
-const { DataTypes, Model } = require("sequelize");
-const sequelize = require("../../sequelize");
+import { DataTypes, Model } from "sequelize";
+import sequelize from "../../sequelize";
 
-class SideGig extends Model {}
+export class SideGig extends Model {}
 
 SideGig.init(
   {
@@ -25,5 +25,3 @@ SideGig.init(
   },
   { sequelize, modelName: "SideGig", timestamps: true },
 );
-
-module.exports = SideGig;
