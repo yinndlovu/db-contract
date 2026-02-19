@@ -19,6 +19,7 @@ import { ITN } from "./payment/ITN";
 import { SideGigPayment } from "./payment/SideGigPayment";
 import { Escrow } from "./payment/Escrow";
 import { Dispute } from "./payment/Dispute";
+import { RecruiterAudit } from "./user/audit/RecruiterAudit";
 
 //User relationships
 User.belongsToMany(Role, {
@@ -42,6 +43,7 @@ User.hasOne(Moderator, { foreignKey: "userId" });
 Moderator.belongsTo(User, { foreignKey: "userId" });
 
 User.hasMany(Otp, { foreignKey: "userId" });
+
 Otp.belongsTo(User, { foreignKey: "userId" });
 
 User.hasMany(Payment, { foreignKey: "userId" });
@@ -80,7 +82,8 @@ Interview.belongsTo(Application, { foreignKey: "applicationId" });
 
 // Recruiter relationships
 Recruiter.hasMany(PostedJob, { foreignKey: "recruiterId" });
-PostedJob.belongsTo(Recruiter, { foreignKey: "recruiterId" });
+Recruiter.hasMany(RecruiterAudit, { foreignKey: "recruiterId" });
+RecruiterAudit.belongsTo(Recruiter, { foreignKey: "recruiterId" });
 
 Recruiter.hasMany(Interview, { foreignKey: "recruiterId" });
 Interview.belongsTo(Recruiter, { foreignKey: "recruiterId" });
